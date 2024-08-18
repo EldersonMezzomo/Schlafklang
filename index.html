@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schlafklang</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="site-title">Schlafklang</h1>
+    </header>
+
+    <main>
+        <div class="button-container">
+            <section id="timer-selection">
+                <button class="timer-btn" data-time="900">15 Min</button>
+                <button class="timer-btn" data-time="1800">30 Min</button>
+                <button class="timer-btn" data-time="3600">60 Min</button>
+            </section>
+
+            <section id="background-selection">
+                <button class="background-btn" data-bg="kerze">Kerze</button>
+                <button class="background-btn" data-bg="fireplace">Feuerstelle</button>
+                <button class="background-btn" data-bg="night-sky">Nachthimmel</button>
+            </section>
+
+            <section id="sound-selection">
+                <button class="sound-btn" data-sound="ambiente">Ambiente</button>
+                <button class="sound-btn" data-sound="futurista">Futurista</button>
+                <button class="sound-btn" data-sound="romantico">Romântica</button>
+            </section>
+
+            <button id="start-btn" class="play-btn" disabled>
+                <span class="play-icon">
+                    <i class="fas fa-play"></i> zzz...
+                </span>
+            </button>
+        </div>
+    </main>
+
+    <div id="overlay">
+        <p>zzz...</p>
+    </div>
+
+    <audio id="audio-player" src="" type="audio/mpeg"></audio>
+
+    <video id="background-video" loop muted autoplay>
+        <source src="assets/video/home.mp4" type="video/mp4">
+        Ihr Browser unterstützt das Video-Element nicht.
+    </video>
+
+    <div id="refresh-icon" class="hidden-elements">
+        🔄
+    </div>
+    <div class="vertical-footer">
+        © 2024 Elderson Luciano Mezzomo - Leidenschaftlicher Frontend-Entwickler aus Marburg, Deutschland.
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
