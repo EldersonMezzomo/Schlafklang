@@ -205,6 +205,45 @@ button.play-btn.pulse {
     white-space: nowrap;
 }
 
+/* Estilização do texto "zzz..." */
+.sleep-text .z1 {
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.sleep-text .z2 {
+    font-size: 16px;
+}
+
+.sleep-text .z3 {
+    font-size: 20px;
+}
+
+/* ajuste de espaçamento entre as letras */
+.sleep-text span {
+    display: inline-block;
+    margin-right: -2px;
+}
+
+@keyframes zzz-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.sleep-text span {
+    display: inline-block;
+    animation: zzz-animation 1.5s infinite ease-in-out;
+}
+
 @media (max-width: 600px) {
     :root {
         /* Tamanhos de Fonte Relativos e Ajustados */
