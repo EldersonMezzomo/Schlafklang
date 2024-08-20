@@ -1,7 +1,53 @@
+/* Importação de Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pacifico&display=swap');
+
+:root {
+    /* Paleta de Cores */
+    --color-text-primary: #F5F5DC;
+    --color-highlight: #D7CCC8;
+    --color-button-border: #BF360C;
+    --color-neutral-dark: #5D4037;
+    --color-background: #3A2F2A;
+
+    /* Tamanhos de Fonte */
+    --font-size-base: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-title: 1.2rem;
+    --font-size-zzz: 3rem;
+    --font-size-refresh-icon: 2rem;
+    --font-size-footer: 0.875rem;
+
+    /* Espaçamento */
+    --spacing-gap-small: 20px;
+    --spacing-gap-medium: 25px;
+    --spacing-gap-large: 50px;
+    --spacing-margin-top-large: 30px;
+    --spacing-margin-auto: 0 auto;
+
+    /* Dimensões de Elementos */
+    --button-width: 150px;
+    --button-height: 50px;
+    --button-play-width: 200px;
+    --button-play-height: 60px;
+    --title-width: 200px;
+    --title-height: 60px;
+
+    /* Bordas e Bordas Radiadas */
+    --border-radius: 5px;
+    --border-width: 2px;
+
+    /* Opacidade */
+    --opacity-default: 0.92;
+
+    /* Animação */
+    --animation-duration: 1s;
+    --animation-ease: all 0.3s ease;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
     text-align: center;
     margin: 0;
     padding: 0;
@@ -18,84 +64,85 @@ header {
 }
 
 h1.site-title {
-    width: 200px;
-    height: 60px;
-    background-color: rgba(68, 68, 68, 0.9); /* Cor de fundo com opacidade */
-    color: #6121c7;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    margin: 0 auto 50px;
+    font-family: 'Pacifico', cursive;
+    font-size: var(--font-size-zzz);
+    background: linear-gradient(45deg, var(--color-highlight), var(--color-neutral-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    margin: var(--spacing-margin-auto) var(--spacing-gap-large);
+    padding: 0 15px;
+    letter-spacing: 1px;
 }
 
 .button-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: var(--spacing-gap-medium);
 }
 
 section {
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-gap-small);
 }
 
 button {
-    width: 150px;
-    height: 50px;
-    background-color: #444;
-    color: #fff;
+    width: var(--button-width);
+    height: var(--button-height);
+    background-color: var(--color-neutral-dark);
+    color: var(--color-text-primary);
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--animation-ease);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 16px;
+    font-size: var(--font-size-base);
     pointer-events: none;
-    opacity: 0.92;
+    opacity: var(--opacity-default);
 }
 
 button.disabled {
-    background-color: #666;
-    cursor: not-allowed;
+    background-color: var(--color-highlight);
+
 }
 
 button.selected {
-    border: 2px solid #0f0;
+    border: var(--border-width) solid var(--color-button-border);
 }
 
 button.pulse {
-    animation: pulse 1s infinite;
-    border: 2px solid #df581a; /* Borda amarela */
-    background-color: #342950; /* Fundo azul suave */
+    animation: pulse var(--animation-duration) infinite;
+    border: var(--border-width) solid var(--color-button-border);
+    background-color: var(--color-background);
 }
 
 button.play-btn {
-    width: 200px;
-    height: 60px;
-    background-color: #444;
-    border-radius: 5px;
-    font-size: 1.2em;
-    margin-top: 30px;
+    width: var(--button-play-width);
+    height: var (--button-play-height);
+    background-color: var(--color-neutral-dark);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-title);
+    margin-top: var(--spacing-margin-top-large);
     pointer-events: none;
 }
 
 button.play-btn.pulse {
-    background-color: #342950; /* Fundo azul suave */
-    border: 2px solid #df581a; /* Borda amarela */
+    background-color: var(--color-background);
+    border: var(--border-width) solid var(--color-button-border);
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
@@ -105,8 +152,8 @@ button.play-btn.pulse {
     position: fixed;
     top: 20px;
     right: 20px;
-    font-size: 2em;
-    color: #32cd32;
+    font-size: var(--font-size-refresh-icon);
+    color: var(--color-button-border);
     cursor: pointer;
     z-index: 10;
 }
@@ -121,17 +168,17 @@ button.play-btn.pulse {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: var(--color-background);
     display: none;
     justify-content: center;
     align-items: center;
 }
 
 #overlay p {
-    color: #292323; /* Cor quase preta para "zzz..." */
-    font-size: 3rem;
+    color: var(--color-neutral-dark);
+    font-size: var(--font-size-zzz);
     font-style: italic;
-    opacity: 0.7; /* Torna o "zzz..." mais discreto */
+    opacity: var(--opacity-default);
 }
 
 #background-video {
@@ -142,17 +189,88 @@ button.play-btn.pulse {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    opacity: 0.8;
+    opacity: var(--opacity-default);
     display: block;
 }
+
 .vertical-footer {
     position: fixed;
     left: 1%;
     top: 92%;
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: left top;
-    font-size: 14px;
-    color: #555; /* Cinza mais claro */
+    font-size: var(--font-size-footer);
+    color: var(--color-neutral-dark);
     z-index: 100;
     white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    :root {
+        /* Tamanhos de Fonte Relativos e Ajustados */
+        --font-size-base: 3vw;
+        --font-size-large: 4vw;
+        --font-size-title: 3.5vw;
+        --font-size-zzz: 8vw;
+        --font-size-refresh-icon: 4.5vw;
+        --font-size-footer: 2.5vw;
+
+        /* Espaçamentos Relativos e Ajustados */
+        --spacing-gap-small: 3vw;
+        --spacing-gap-medium: 4vw;
+        --spacing-gap-large: 6vw;
+        --spacing-margin-top-large: 4vw;
+
+        /* Dimensões dos Elementos Relativas e Ajustadas */
+        --button-width: 25vw;
+        --button-height: 9vw;
+        --button-play-width: 45vw;
+        --button-play-height: 11vw;
+        --title-width: 45vw;
+        --title-height: 11vw;
+    }
+
+    body {
+        padding: 5vw;
+        height: auto;
+    }
+
+    header {
+        padding-top: var(--spacing-gap-large);
+        padding-bottom: var(--spacing-gap-large);
+    }
+
+    .button-container {
+        gap: var(--spacing-gap-medium);
+        padding: 0 10px;
+    }
+
+    section {
+        gap: var(--spacing-gap-small);
+        padding: 0 10px;
+    }
+
+    button {
+        font-size: var(--font-size-base);
+        width: var(--button-width);
+        height: var(--button-height);
+    }
+
+    button.play-btn {
+        width: var(--button-play-width);
+        height: var(--button-play-height);
+        margin-top: var(--spacing-margin-top-large);
+    }
+
+    h1.site-title {
+        font-size: var(--font-size-zzz);
+    }
+
+    .vertical-footer {
+        font-size: var(--font-size-footer);
+    }
+
+    #refresh-icon {
+        font-size: var(--font-size-refresh-icon);
+    }
 }
